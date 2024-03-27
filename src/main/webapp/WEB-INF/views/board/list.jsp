@@ -15,7 +15,7 @@
   #table {
 	  td { 
 	    padding     : 10px;
-	    text-align  : center; 
+	    text-align  : center;  
 	  }
 	  
 	  td:nth-of-type(1) { width : 100px; }  
