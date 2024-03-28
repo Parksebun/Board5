@@ -57,6 +57,13 @@
       
     </insert>
   
+    <delete id="deleteBoard">
+    
+    DELETE
+     FROM		BOARD
+     WHERE		BNO = #{BNO}
+    
+    </delete>
     
 </mapper>
 

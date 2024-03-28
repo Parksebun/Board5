@@ -116,6 +116,22 @@ public class BoardController {
 		
 	}
 	
+	// board/delete?bno3
+	@RequestMapping("/Delete")
+	public ModelAndView delete(BoardVo boardVo) {
+		
+		//게시글 삭제
+		boardMapper.deleteBoard( boardVo  );
+		
+		String		menu_id = boardVo.getMenu_id();
+		
+		// 다시 조회
+		ModelAndView	mv = new ModelAndView();
+		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
+		return mv;
+		
+	}
+	
 	
 }
 
