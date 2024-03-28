@@ -39,11 +39,14 @@ public class BoardController {
 		List<BoardVo> boardList  =  boardMapper.getBoardList( menuVo  ); 
 		System.out.println( boardList );
 		
-		String        menu_id    =  menuVo.getMenu_id();
-				
+		MenuVo		  mVo		= menuMapper.getMenu(menuVo.getMenu_id() );	
+		String        menu_id   = mVo.getMenu_id();
+		String		  menu_name = mVo.getMenu_name();
+		
 		ModelAndView  mv         =  new ModelAndView();
 		mv.addObject("menu_id",    menu_id );
 		mv.addObject("menuList",   menuList );
+		mv.addObject("menu_name",   menu_name );
 		mv.addObject("boardList",  boardList );
 		mv.setViewName("board/list");
 		return   mv;

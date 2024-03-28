@@ -28,7 +28,7 @@
     	 FROM  
            BOARD
          WHERE
-           BNO = #{ bno  }
+           BNO = #{ bno  } 
     </select>   
     
     <update  id = "incHit">

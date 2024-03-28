@@ -54,7 +54,7 @@
 	  
 	 <%@include file="/WEB-INF/include/menus.jsp" %>
 	
-	  <h2>게시물 목록</h2>
+	  <h2>${ menu_name }게시물 목록</h2>
 	  <table id="table" >
 	    <tr>
 	      <td>번호</td>
