@@ -131,7 +131,33 @@ public class BoardController {
 		return mv;
 		
 	}
+	// 수정"/Users/Update"
+	@RequestMapping("/UpdateForm")
+	public ModelAndView UpdateForm(BoardVo boardVo) {
 	
+		
+		BoardVo  vo =  boardMapper.getBoard( boardVo );
+		ModelAndView	mv = new ModelAndView();
+		mv.addObject("vo", vo);
+		mv.setViewName("board/update");
+		return mv;
+		
+	}
+	
+	// /Board/Update 
+	@RequestMapping("/Update")
+	public ModelAndView update( BoardVo boardVo) {
+		
+		//수정
+		boardMapper.updateBoard(boardVo);
+		
+		String		menu_id = boardVo.getMenu_id();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
+		return mv;
+		
+	}
 	
 }
 
